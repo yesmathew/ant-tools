@@ -230,5 +230,6 @@ app_license = "mit"
 jinja = {
     "methods": [
         "ant_tools.api.utils.barcode_generator",
+        "ant_tools.api.utils.length_counter",
     ],
 }
