@@ -6,7 +6,7 @@ $(window).on("offline", function () {
   }
 });
 function playBeepSound() {
-  var audio = new Audio('/files/beep-01a.mp3');
+  var audio = new Audio(localStorage.getItem("ant_beep_file"));
   let beepCount = 0;
   const maxBeeps = 4;
   const beepInterval = setInterval(() => {
@@ -34,7 +34,15 @@ frappe.ui.form.on('Stock Entry Detail', {
 
 frappe.ui.form.on('Stock Entry', {
   onload: function (frm){
-    frappe.db.get_single_value("Ant tool Settings", "beep_sound").then(r=>{
+    frappe.db.get_single_value("Ant tool Setting", "beep_sound").then(r=>{
+      if (r){
+        frappe.db.get_single_value("Ant tool Setting", "beep_file").then(file=>{
+          frappe.db.get_value('File', file, 'file_url')
+        .then(r => {
+          localStorage.setItem("ant_beep_file",r.message.file_url)
+        })
+        })
+      }
       localStorage.setItem("ant_alert",r)
     })
   },
