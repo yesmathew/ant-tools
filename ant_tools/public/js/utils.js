@@ -30,6 +30,20 @@ frappe.ui.form.on('Stock Entry Detail', {
       let serial_no = serial_no_data[serial_no_data.length - 1];
       frm.set_value('custom_data_serial', serial_no);
   },
+  batch_no: function (frm,cdt,cdn) {
+    const row=locals[cdt][cdn]
+    if (!row.serial_no && row.batch_no ){
+      frm.set_value('custom_data_serial', row.batch_no);
+
+    }
+  },
+  item_name: function (frm,cdt,cdn) {
+  const row=locals[cdt][cdn]
+  if(!row.serial_no && !row.batch_no){
+    frm.set_value('custom_data_serial', row.item_name);
+  }
+  },
+
   });
 
 frappe.ui.form.on('Stock Entry', {
