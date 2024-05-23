@@ -28,7 +28,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Stock Entry" : "public/js/utils.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -233,3 +233,11 @@ jinja = {
         "ant_tools.api.utils.length_counter",
     ],
 }
+
+
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "=", "Ant Tools"]],
+    "prefix": "ant_tools_custom_fields"},
+    {"dt": "DocType", "filters": [["module", "=", "Ant Tools"]],
+    "prefix": "ant_tools_custom_doctypes"}
+]

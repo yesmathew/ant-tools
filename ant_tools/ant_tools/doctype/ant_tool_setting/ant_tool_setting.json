@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-23 14:54:46.243505",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vknq",
+  "beep_sound",
+  "beep_file"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vknq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "beep_sound",
+   "fieldtype": "Check",
+   "label": "Beep Sound"
+  },
+  {
+   "fieldname": "beep_file",
+   "fieldtype": "Link",
+   "label": "Beep File",
+   "mandatory_depends_on": "beep_sound",
+   "options": "File"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-05-23 15:07:27.721763",
+ "modified_by": "Administrator",
+ "module": "Ant Tools",
+ "name": "Ant tool setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
