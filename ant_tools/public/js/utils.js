@@ -2,16 +2,17 @@ $(window).on("offline", function () {
   let ant_alert = localStorage.getItem("ant_alert");
   if (ant_alert) {
       showConnectionLostMessage();
+      frappe.utils.play_sound("ping") 
       playBeepSound();
   }
 });
 function playBeepSound() {
-  var audio = new Audio(localStorage.getItem("ant_beep_file"));
+    // var audio = new Audio(localStorage.getItem("ant_beep_file"));
   let beepCount = 0;
   const maxBeeps = 4;
   const beepInterval = setInterval(() => {
       if (!navigator.onLine && beepCount < maxBeeps) {
-          audio.play();
+        frappe.utils.play_sound("ping")
           beepCount++;
       } else if (beepCount >= maxBeeps) {
           clearInterval(beepInterval);
@@ -48,17 +49,8 @@ frappe.ui.form.on('Stock Entry Detail', {
 
 frappe.ui.form.on('Stock Entry', {
   onload: function (frm){
-    frappe.db.get_single_value("Ant tool Setting", "beep_sound").then(r=>{
-      if (r){
-        frappe.db.get_single_value("Ant tool Setting", "beep_file").then(file=>{
-          frappe.db.get_value('File', file, 'file_url')
-        .then(r => {
-          localStorage.setItem("ant_beep_file",r.message.file_url)
-        })
-        })
-      }
+    frappe.db.get_single_value("Ant tool setting", "beep_sound").then(r=>{
       localStorage.setItem("ant_alert",r)
     })
   },
 })
-  
