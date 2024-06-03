@@ -242,5 +242,5 @@ fixtures = [
     "prefix": "ant_tools_custom_doctypes"}
 ]
 sounds = [
-    {"name": "ping", "src": "/assets/erpnext/sounds/call-disconnect.mp3", "volume": 0.2}
+    {"name": "ping", "src": "/assets/erpnext/sounds/call-disconnect.mp3", "volume": 1}
 ]   
