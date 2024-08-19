@@ -10,11 +10,13 @@ from barcode.writer import SVGWriter
 @frappe.whitelist(allow_guest=True)
 def barcode_generator(data):
        
+
        """
 
        This function will accept a param as data and return an svg data as barcode use a access it throw jinga tag as {{barcode_generator(data)}}
 
-       """     
+       """
+        
        try:    
                code128 = barcode.get_barcode_class("code128")
 
