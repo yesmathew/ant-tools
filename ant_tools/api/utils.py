@@ -35,6 +35,7 @@ def barcode_generator(data):
        except:
                #   Throw a error message 
                frappe.throw("sent a proper param to access the barcode data")
+               
 
 @frappe.whitelist(allow_guest=True)
 def length_counter(data):
