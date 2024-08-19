@@ -1,8 +1,10 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-05-23 14:54:46.243505",
+ "creation": "2024-08-19 12:53:07.736283",
+ "default_view": "List",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "section_break_vknq",
@@ -14,19 +16,18 @@
    "fieldtype": "Section Break"
   },
   {
-   "default": "0",
    "fieldname": "beep_sound",
-   "fieldtype": "Check",
+   "fieldtype": "Data",
    "label": "Beep Sound"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-08-19 11:29:38.600577",
+ "modified": "2024-08-19 12:53:07.736283",
  "modified_by": "Administrator",
  "module": "Ant Tools",
- "name": "Ant tool setting",
+ "name": "Ant tools setting",
  "owner": "Administrator",
  "permissions": [
   {
@@ -40,7 +41,7 @@
    "write": 1
   }
  ],
- "sort_field": "creation",
+ "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
 }

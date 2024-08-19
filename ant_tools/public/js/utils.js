@@ -48,7 +48,7 @@ frappe.ui.form.on('Stock Entry Detail', {
 
 frappe.ui.form.on('Stock Entry', {
   onload: function (frm){
-    frappe.db.get_single_value("Ant tool setting", "beep_sound").then(r=>{
+    frappe.db.get_single_value("Ant tools setting", "beep_sound").then(r=>{
       localStorage.setItem("ant_alert",r)
     })
   },
