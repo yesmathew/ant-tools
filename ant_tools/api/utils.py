@@ -29,9 +29,8 @@ def barcode_generator(data):
                 # Construct the data URI
                 data_uri = f"data:image/svg+xml;base64,{base64_svg_data}"
                 return data_uri
-        except:
-                #   Throw a error message 
-                frappe.throw("sent a proper param to access the barcode data")
+        except Exception as e:
+                frappe.throw(f"Error generating barcode: {str(e)}")
 
 
 @frappe.whitelist(allow_guest=True)
@@ -39,10 +38,9 @@ def length_counter(data):
        """
        This function will accept a variable ant return the length of it 
        """
-       try:
-               return len(data)
-       except:
-               frappe.throw("something went wrong")
+       if not isinstance(data, str):
+            frappe.throw("The input data must be a string")
+       return len(data)
 
 @frappe.whitelist(allow_guest=True)
 def item_gst_filter(items):
@@ -67,9 +65,9 @@ def item_gst_filter(items):
                # Add item to the group
                grouped_items[key]["items"].append(item)
                # Safely sum up SGST, CGST, and IGST amounts, treating None as 0
-               grouped_items[key]["total_sgst_amount"] += item.get("sgst_amount", 0) or 0
-               grouped_items[key]["total_cgst_amount"] += item.get("cgst_amount", 0,2) or 0
-               grouped_items[key]["total_igst_amount"] += item.get("igst_amount", 0,2) or 0
+               grouped_items[key]["total_cgst_amount"] += item.get("cgst_amount", 0) or 0
+               grouped_items[key]["total_igst_amount"] += item.get("igst_amount", 0) or 0
+               grouped_items[key]["sgst_rate"] = item.get("sgst_rate", 0) or 0
                # Sum the quantities and taxable amounts, treating None as 0
                grouped_items[key]["total_qty"] += item.get("qty", 0) or 0
                grouped_items[key]["total_taxable_amount"] += item.get("taxable_value", 0) or 0
@@ -79,7 +77,7 @@ def item_gst_filter(items):
                        grouped_items[key]["hsn"] = item.get("gst_hsn_code")
                        grouped_items[key]["igst_rate"] = item.get("igst_rate", 0) or 0
                        grouped_items[key]["cgst_rate"] = item.get("cgst_rate", 0) or 0
-                       grouped_items[key]["sgst_rate"] = item.get("sgst_rate", 0,2) or 0
+                       grouped_items[key]["sgst_rate"] = item.get("sgst_rate", 0) or 0
        # Convert defaultdict to a list of dictionaries for easier use in Jinja
        grouped_list = []
        idx = 1
