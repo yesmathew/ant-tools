@@ -242,3 +242,4 @@ fixtures = [
 ]
 sounds = [
     {"name": "ping", "src": "/assets/erpnext/sounds/call-disconnect.mp3", "volume": 1}
+]
