@@ -232,7 +232,7 @@ jinja = {
                "ant_tools.api.utils.barcode_generator",
                "ant_tools.api.utils.length_counter",
                "ant_tools.api.utils.item_gst_filter",
-       ],
+       ]
 }
 
 
