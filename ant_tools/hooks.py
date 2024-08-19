@@ -235,7 +235,6 @@ jinja = {
        ]
 }
 
-
 fixtures = [
        {"dt": "Custom Field", "filters": [["module", "=", "Ant Tools"]], "prefix": "ant_tools_custom_fields"}
 ]

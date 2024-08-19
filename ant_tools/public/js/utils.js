@@ -6,6 +6,7 @@ $(window).on("offline", function () {
     playBeepSound();
   }
 });
+
 function playBeepSound() {
   let beepCount = 0;
   const maxBeeps = 4;
@@ -24,12 +25,14 @@ function showConnectionLostMessage() {
 }
 
 frappe.ui.form.on("Stock Entry Detail", {
+
   serial_no: function (frm, cdt, cdn) {
     const row = locals[cdt][cdn];
     let serial_no_data = row.serial_no.split("\n");
     let serial_no = serial_no_data[serial_no_data.length - 1];
     frm.set_value("custom_data_serial", serial_no);
   },
+
   batch_no: function (frm, cdt, cdn) {
     const row = locals[cdt][cdn];
     if (!row.serial_no && row.batch_no) {
