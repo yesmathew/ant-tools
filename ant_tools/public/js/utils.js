@@ -7,7 +7,6 @@ $(window).on("offline", function () {
   }
 });
 function playBeepSound() {
-    // var audio = new Audio(localStorage.getItem("ant_beep_file"));
   let beepCount = 0;
   const maxBeeps = 4;
   const beepInterval = setInterval(() => {
