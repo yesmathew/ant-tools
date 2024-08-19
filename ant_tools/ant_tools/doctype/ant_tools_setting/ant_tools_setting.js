@@ -3,6 +3,5 @@
 
 frappe.ui.form.on("Ant tools setting", {
 	// refresh: function(frm) {
-
 	// }
 });
