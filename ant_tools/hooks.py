@@ -229,13 +229,15 @@ doctype_js = {"Stock Entry": "public/js/utils.js"}
 
 jinja = {
         "methods": [
-            "ant_tools.api.utils.barcode_generator",
-            "ant_tools.api.utils.length_counter",
-            "ant_tools.api.utils.item_gst_filter",
+                "ant_tools.api.utils.barcode_generator",
+                "ant_tools.api.utils.length_counter",
+                "ant_tools.api.utils.item_gst_filter",
         ],
 }
 
 
-fixtures = [{"dt": "Custom Field", "filters": [["module", "=", "Ant Tools"]],"prefix": "ant_tools_custom_fields"}]
+fixtures = [
+        {"dt": "Custom Field", "filters": [["module", "=", "Ant Tools"]],"prefix": "ant_tools_custom_fields"}
+]
 
 sounds = [{"name": "ping", "src": "/assets/erpnext/sounds/call-disconnect.mp3", "volume": 1}]
