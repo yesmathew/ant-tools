@@ -237,7 +237,7 @@ jinja = {
 
 
 fixtures = [
-       {"dt": "Custom Field", "filters": [["module", "=", "Ant Tools"]],"prefix": "ant_tools_custom_fields"}
+       {"dt": "Custom Field", "filters": [["module", "=", "Ant Tools"]], "prefix": "ant_tools_custom_fields"}
 ]
 
 sounds = [{"name": "ping", "src": "/assets/erpnext/sounds/call-disconnect.mp3", "volume": 1}]
