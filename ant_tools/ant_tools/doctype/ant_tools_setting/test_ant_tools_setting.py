@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestAnttoolsetting(FrappeTestCase):
+class TestAnttoolssetting(FrappeTestCase):
 	pass
