@@ -66,7 +66,7 @@ def item_gst_filter(items):
                # Safely sum up SGST, CGST, and IGST amounts, treating None as 0
                grouped_items[key]["total_cgst_amount"] += item.get("cgst_amount", 0) or 0
                grouped_items[key]["total_igst_amount"] += item.get("igst_amount", 0) or 0
-               grouped_items[key]["total_sgst_amount"] += item.get("sgst_rate", 0) or 0
+               grouped_items[key]["total_sgst_amount"] += item.get("sgst_amount", 0) or 0
                # Sum the quantities and taxable amounts, treating None as 0
                grouped_items[key]["total_qty"] += item.get("qty", 0) or 0
                grouped_items[key]["total_taxable_amount"] += item.get("taxable_value", 0) or 0
